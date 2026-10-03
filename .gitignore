@@ -1,0 +1,23 @@
+# Secrets & local config
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+*.pem
+*.key
+
+# Build output
+**/target/
+**/node_modules/
+**/dist/
+*.log
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Local DB volumes
+mysql-data/

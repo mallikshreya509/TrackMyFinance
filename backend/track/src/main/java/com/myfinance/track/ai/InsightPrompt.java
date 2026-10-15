@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 final class InsightPrompt {
-
+    static final String VERSION = "1";
     private InsightPrompt() {}
 
     static String systemInstruction(String currency) {

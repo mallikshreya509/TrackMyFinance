@@ -23,6 +23,14 @@ export function AuthProvider({ children }) {
     return () => setUnauthorizedHandler(null)
   }, [clearSession])
 
+  useEffect(() => {
+  const onPageShow = (e) => {
+    if (e.persisted && !tokenStore.get()) window.location.replace('/login')
+  }
+  window.addEventListener('pageshow', onPageShow)
+  return () => window.removeEventListener('pageshow', onPageShow)
+}, [])
+
   // On first load: if a token exists, ask the backend who it belongs to
   useEffect(() => {
     if (!tokenStore.get()) return
